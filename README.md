@@ -1,65 +1,88 @@
-# Mona Sans
+---
 
-[Download Mona Sans](https://github.com/github/mona-sans/releases/latest) • [Typeface microsite](https://github.com/mona-sans) ↗️
+## Setting up your font
 
-A strong and versatile typeface, designed together with [Degarism](https://degarism.com/) and inspired by industrial-era grotesques. Mona Sans works well across product, web, and print. Made to work well together with  Mona Sans's sidekick, [Hubot Sans](https://github.com/github/hubot-sans).
+- **New repositories.** Hit the green button above ("Use this template") to create your own repository. Please note that a Github Action job will be executed once you've created the repository which will populate the readme. This may take a few minutes. Please wait for this job to complete before pulling the repo to your local system.\*
 
-Mona Sans is a [variable font](https://web.dev/variable-fonts/). Variable fonts enable different variations of a typeface to be incorporated into one single file, and are supported by all major browsers, allowing for performance benefits and granular design control of the typeface's weight, width, and slant.
+- **Updating a repository.** To update your font repository to bring in the latest best-practices from the Google Fonts Project Template, run `make update-project-template` from the command line.
 
-![mona-sans](https://user-images.githubusercontent.com/99746865/200648883-dbd47e9a-9d95-483e-aef6-1bfa602eb942.png)
+- Replace the font sources in the `sources` directory with your own font sources. These sources may be either in Glyphs format or UFO/Designspace formats.\
+  \
+  Unlike many open source distributors, Google Fonts is **curated**. Fonts shipped to the platform have to match the [Google Fonts Specifications](https://github.com/googlefonts/gf-docs/tree/main/Spec). Please read them carefully.\
+  \
+  _(The sample font provided in this template is [Rubik](https://github.com/googlefonts/rubik/) by Philipp Hubert, Sebastian Fischer, and contributors.)_
 
-## Usage
+- Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Fonts Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
-For web, we recommend using `Mona Sans.woff2`. Define the font with a `@font-face` rule, set its **weight** and **stretch** ranges, and use it:
+- Add yourself to the `AUTHORS.txt` and `CONTRIBUTORS.txt` files.
 
-```css
-@font-face {
-  font-family: 'Mona Sans';
-  src:
-    url('Mona-Sans.woff2') format('woff2 supports variations'),
-    url('Mona-Sans.woff2') format('woff2-variations');
-  font-weight: 200 900;
-  font-stretch: 75% 125%;
-}
+- Update the first line of the OFL.txt (year and project name). Update also the Copyright string in the sources, it has to be the same as the OFL.txt. The `.glyphs` file in this repo gives you required base charset and font info.
 
-html {
-  font-family: 'Mona Sans';
-}
-```
+- Finally, add and commit any files you have modified (i.e. `README.md`, `AUTHORS.txt`, `CONTRIBUTORS.txt`, the font sources, and `sources/config.yaml`) to git, then push to GitHub. Please be aware that Github Actions may take a few minutes to build your font family. It is worthwhile inspecting the progress in the "Actions" tab.
 
-To reduce [CLS](https://web.dev/cls/), you can preload the font in the `head` of your document:
+- If Github Actions has successfully built the family, you will find the font binaries in the Actions tab. The official Github Actions documentation provides further [information](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts).
 
-```html
-<link rel="preload" href="Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
-```
+- Once you are happy with your font, add promotional assets in the documentation directory. Make it different from the pic you use in this README. You can get inspired by existing tweet @googlefonts like: https://twitter.com/googlefonts/status/1415562928657416192.
 
-## Styles
-| Style Name | Italic Name | Weight | Width |
-| --- | --- | --- | --- |
-| UltraLight Narrow | UltraLight Narrow Italic | 200 | 75 |
-| Light Narrow | Light Narrow Italic | 300 | 75 |
-| Regular Narrow | Regular Narrow Italic | 400 | 75 |
-| Medium Narrow | Medium Narrow Italic | 500 | 75 |
-| SemiBold Narrow | SemiBold Narrow Italic | 600 | 75 |
-| Bold Narrow | Bold Narrow Italic | 700 | 75 |
-| ExtraBold Narrow | ExtraBold Narrow Italic | 800 | 75 |
-| Black Narrow | Black Narrow Italic | 900 | 75 |
-| UltraLight | UltraLight Italic | 200 | 100 |
-| Light | Light Italic | 300 | 100 |
-| Regular | Regular Italic | 400 | 100 |
-| Medium | Medium Italic | 500 | 100 |
-| SemiBold | SemiBold Italic | 600 | 100 |
-| Bold | Bold Italic | 700 | 100 |
-| ExtraBold | ExtraBold Italic | 800 | 100 |
-| Black | Black Italic | 900 | 100 |
-| UltraLight Wide | UltraLight Wide Italic | 200 | 125 |
-| Light Wide | Light Wide Italic | 300 | 125 |
-| Regular Wide | Regular Wide Italic | 400 | 125 |
-| Medium Wide | Medium Wide Italic | 500 | 125 |
-| SemiBold Wide | SemiBold Wide Italic | 600 | 125 |
-| Bold Wide | Bold Wide Italic | 700 | 125 |
-| ExtraBold Wide | ExtraBold Wide Italic | 800 | 125 |
-| Black Wide | Black Wide Italic | 900 | 125 |
+- Google Fonts uses Github Releases to manage font families. If you feel your font project has hit a milestone, you must create a new release for it. In order to do this, go to the releases page and hit the "Draft a new release button". You must provide a tag number and title which can only be a decimal number e.g 0.100, 1.000 etc. For the body text, mention what has changed since the last release. Once you are done, hit the "Publish release" button. Here is an example which fulfills the requirements, https://github.com/m4rc1e/test-ufr-family/releases/tag/2.019. For more info regarding Github release, please see the official Github Release [documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). **Please note that Github Actions must be able to build the fonts before you can make a release. Once you have made a release, the fonts and tests assets will be attached to the release automatically. This may take a while since the fonts and tests will be built from scratch so please be patient.**
+
+- Remove this section from the readme. :-)
+
+---
+
+# My Font
+
+[![][fontbakery]](https://ottta.github.io/mona-sans.git/fontbakery/fontbakery-report.html)
+[![][universal]](https://ottta.github.io/mona-sans.git/fontbakery/fontbakery-report.html)
+[![][gf profile]](https://ottta.github.io/mona-sans.git/fontbakery/fontbakery-report.html)
+[![][outline correctness]](https://ottta.github.io/mona-sans.git/fontbakery/fontbakery-report.html)
+[![][shaping]](https://ottta.github.io/mona-sans.git/fontbakery/fontbakery-report.html)
+
+[fontbakery]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fottta%2Fmona-sans.git%2Fgh-pages%2Fbadges%2Foverall.json
+[gf profile]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fottta%2Fmona-sans.git%2Fgh-pages%2Fbadges%2FGoogleFonts.json
+[outline correctness]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fottta%2Fmona-sans.git%2Fgh-pages%2Fbadges%2FOutlineCorrectnessChecks.json
+[shaping]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fottta%2Fmona-sans.git%2Fgh-pages%2Fbadges%2FShapingChecks.json
+[universal]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fottta%2Fmona-sans.git%2Fgh-pages%2Fbadges%2FUniversal.json
+
+Description of your font goes here. We recommend to start with a very short presentation line (the kind you would use on twitter to present your project for example), and then add as much details as necesary :-) Origin of the project, idea of usage, concept of creation… but also number of masters, axes, character sets, etc.
+
+Don't hesitate to create images!
+
+![Sample Image](documentation/image1.png)
+
+## About
+
+Description of you and/or organisation goes here.
+
+## Building
+
+Fonts are built automatically by GitHub Actions - take a look in the "Actions" tab for the latest build.
+
+If you want to build fonts manually on your own computer:
+
+- `make build` will produce font files.
+- `make test` will run [FontBakery](https://github.com/googlefonts/fontbakery)'s quality assurance tests.
+- `make proof` will generate HTML proof files.
+
+The proof files and QA tests are also available automatically via GitHub Actions - look at https://ottta.github.io/mona-sans.git.
+
+## Changelog
+
+When you update your font (new version or new release), please report all notable changes here, with a date.
+[Font Versioning](https://github.com/googlefonts/gf-docs/tree/main/Spec#font-versioning) is based on semver.
+Changelog example:
+
+**26 May 2021. Version 2.13**
+
+- MAJOR Font turned to a variable font.
+- SIGNIFICANT New Stylistic sets added.
 
 ## License
-Mona Sans is licensed under the [SIL Open Font License v1.1](https://scripts.sil.org/OFL).
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is available with a FAQ at
+https://scripts.sil.org/OFL
+
+## Repository Layout
+
+This font repository structure is inspired by [Unified Font Repository v0.3](https://github.com/unified-font-repository/Unified-Font-Repository), modified for the Google Fonts workflow.

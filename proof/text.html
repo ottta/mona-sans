@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Text</title>
+    
+    <style type="text/css">
+    
+        html{
+	  font-family: sans-serif;
+	}
+	.box-title{
+	  width: 100%;
+	  float: left;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	}
+	#font-toggle{
+	  display: block;
+	  font-weight: 700;
+	  cursor: pointer;
+	  -webkit-user-select: none; /* Safari */        
+	  -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+/Edge */
+	  user-select: none; /* Standard */
+	  text-align: center;
+	  color: white;
+	  background-color: black;
+	  width: 50px;
+	  display: block;
+	  padding: 10px;
+	}
+
+	  
+
+	  
+
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-ExtraBoldItalic.ttf); font-family: Mona-Sans-Condensed-ExtraBold-Italic; font-weight: 800; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Regular.ttf); font-family: Mona-Sans-Expanded-Regular; font-weight: 400; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Italic.ttf); font-family: Mona-Sans-Expanded-Italic; font-weight: 400; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Black.ttf); font-family: Mona-Sans-Expanded-Black; font-weight: 900; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-BlackItalic.ttf); font-family: Mona-Sans-Black-Italic; font-weight: 900; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-ExtraLightItalic.ttf); font-family: Mona-Sans-Expanded-ExtraLight-Italic; font-weight: 200; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-SemiBold.ttf); font-family: Mona-Sans-SemiBold; font-weight: 600; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-SemiBold.ttf); font-family: Mona-Sans-Expanded-SemiBold; font-weight: 600; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-BlackItalic.ttf); font-family: Mona-Sans-Expanded-Black-Italic; font-weight: 900; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-ExtraBoldItalic.ttf); font-family: Mona-Sans-Expanded-ExtraBold-Italic; font-weight: 800; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Regular.ttf); font-family: Mona-Sans-Condensed-Regular; font-weight: 400; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Medium.ttf); font-family: Mona-Sans-Condensed-Medium; font-weight: 500; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-ExtraLight.ttf); font-family: Mona-Sans-Expanded-ExtraLight; font-weight: 200; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-ExtraBold.ttf); font-family: Mona-Sans-Expanded-ExtraBold; font-weight: 800; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Light.ttf); font-family: Mona-Sans-Condensed-Light; font-weight: 300; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Medium.ttf); font-family: Mona-Sans-Medium; font-weight: 500; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Bold.ttf); font-family: Mona-Sans-Condensed-Bold; font-weight: 700; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-BoldItalic.ttf); font-family: Mona-Sans-Condensed-Bold-Italic; font-weight: 700; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Light.ttf); font-family: Mona-Sans-Expanded-Light; font-weight: 300; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-ExtraLight.ttf); font-family: Mona-Sans-ExtraLight; font-weight: 200; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Medium.ttf); font-family: Mona-Sans-Expanded-Medium; font-weight: 500; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-ExtraLightItalic.ttf); font-family: Mona-Sans-ExtraLight-Italic; font-weight: 200; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-SemiBoldItalic.ttf); font-family: Mona-Sans-SemiBold-Italic; font-weight: 600; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Light.ttf); font-family: Mona-Sans-Light; font-weight: 300; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Regular.ttf); font-family: Mona-Sans-Regular; font-weight: 400; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-LightItalic.ttf); font-family: Mona-Sans-Light-Italic; font-weight: 300; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-BoldItalic.ttf); font-family: Mona-Sans-Bold-Italic; font-weight: 700; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-ExtraLightItalic.ttf); font-family: Mona-Sans-Condensed-ExtraLight-Italic; font-weight: 200; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-MediumItalic.ttf); font-family: Mona-Sans-Expanded-Medium-Italic; font-weight: 500; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-ExtraBold.ttf); font-family: Mona-Sans-Condensed-ExtraBold; font-weight: 800; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-ExtraLight.ttf); font-family: Mona-Sans-Condensed-ExtraLight; font-weight: 200; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-BlackItalic.ttf); font-family: Mona-Sans-Condensed-Black-Italic; font-weight: 900; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-ExtraBoldItalic.ttf); font-family: Mona-Sans-ExtraBold-Italic; font-weight: 800; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-Bold.ttf); font-family: Mona-Sans-Expanded-Bold; font-weight: 700; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-LightItalic.ttf); font-family: Mona-Sans-Condensed-Light-Italic; font-weight: 300; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-SemiBoldItalic.ttf); font-family: Mona-Sans-Expanded-SemiBold-Italic; font-weight: 600; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Italic.ttf); font-family: Mona-Sans-Italic; font-weight: 400; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-LightItalic.ttf); font-family: Mona-Sans-Expanded-Light-Italic; font-weight: 300; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-SemiBold.ttf); font-family: Mona-Sans-Condensed-SemiBold; font-weight: 600; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Italic.ttf); font-family: Mona-Sans-Condensed-Italic; font-weight: 400; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSansExpanded-BoldItalic.ttf); font-family: Mona-Sans-Expanded-Bold-Italic; font-weight: 700; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-MediumItalic.ttf); font-family: Mona-Sans-Medium-Italic; font-weight: 500; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Black.ttf); font-family: Mona-Sans-Black; font-weight: 900; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-Black.ttf); font-family: Mona-Sans-Condensed-Black; font-weight: 900; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-MediumItalic.ttf); font-family: Mona-Sans-Condensed-Medium-Italic; font-weight: 500; font-stretch: 100%; font-style: italic; }
+	  
+	    @font-face { src: url(fonts/MonaSans-Bold.ttf); font-family: Mona-Sans-Bold; font-weight: 700; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSans-ExtraBold.ttf); font-family: Mona-Sans-ExtraBold; font-weight: 800; font-stretch: 100%; font-style: normal; }
+	  
+	    @font-face { src: url(fonts/MonaSansCondensed-SemiBoldItalic.ttf); font-family: Mona-Sans-Condensed-SemiBold-Italic; font-weight: 600; font-stretch: 100%; font-style: italic; }
+	  
+
+	  
+
+	  
+
+	  
+	    .Mona-Sans-Condensed-ExtraBold-Italic { font-family: Mona-Sans-Condensed-ExtraBold-Italic; font-weight: 800; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Regular { font-family: Mona-Sans-Expanded-Regular; font-weight: 400; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Italic { font-family: Mona-Sans-Expanded-Italic; font-weight: 400; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Black { font-family: Mona-Sans-Expanded-Black; font-weight: 900; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Black-Italic { font-family: Mona-Sans-Black-Italic; font-weight: 900; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-ExtraLight-Italic { font-family: Mona-Sans-Expanded-ExtraLight-Italic; font-weight: 200; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-SemiBold { font-family: Mona-Sans-SemiBold; font-weight: 600; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-SemiBold { font-family: Mona-Sans-Expanded-SemiBold; font-weight: 600; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Black-Italic { font-family: Mona-Sans-Expanded-Black-Italic; font-weight: 900; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-ExtraBold-Italic { font-family: Mona-Sans-Expanded-ExtraBold-Italic; font-weight: 800; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Regular { font-family: Mona-Sans-Condensed-Regular; font-weight: 400; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Medium { font-family: Mona-Sans-Condensed-Medium; font-weight: 500; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-ExtraLight { font-family: Mona-Sans-Expanded-ExtraLight; font-weight: 200; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-ExtraBold { font-family: Mona-Sans-Expanded-ExtraBold; font-weight: 800; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Light { font-family: Mona-Sans-Condensed-Light; font-weight: 300; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Medium { font-family: Mona-Sans-Medium; font-weight: 500; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Bold { font-family: Mona-Sans-Condensed-Bold; font-weight: 700; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Bold-Italic { font-family: Mona-Sans-Condensed-Bold-Italic; font-weight: 700; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Light { font-family: Mona-Sans-Expanded-Light; font-weight: 300; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-ExtraLight { font-family: Mona-Sans-ExtraLight; font-weight: 200; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Medium { font-family: Mona-Sans-Expanded-Medium; font-weight: 500; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-ExtraLight-Italic { font-family: Mona-Sans-ExtraLight-Italic; font-weight: 200; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-SemiBold-Italic { font-family: Mona-Sans-SemiBold-Italic; font-weight: 600; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Light { font-family: Mona-Sans-Light; font-weight: 300; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Regular { font-family: Mona-Sans-Regular; font-weight: 400; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Light-Italic { font-family: Mona-Sans-Light-Italic; font-weight: 300; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Bold-Italic { font-family: Mona-Sans-Bold-Italic; font-weight: 700; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-ExtraLight-Italic { font-family: Mona-Sans-Condensed-ExtraLight-Italic; font-weight: 200; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Medium-Italic { font-family: Mona-Sans-Expanded-Medium-Italic; font-weight: 500; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-ExtraBold { font-family: Mona-Sans-Condensed-ExtraBold; font-weight: 800; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-ExtraLight { font-family: Mona-Sans-Condensed-ExtraLight; font-weight: 200; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Black-Italic { font-family: Mona-Sans-Condensed-Black-Italic; font-weight: 900; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-ExtraBold-Italic { font-family: Mona-Sans-ExtraBold-Italic; font-weight: 800; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Bold { font-family: Mona-Sans-Expanded-Bold; font-weight: 700; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Light-Italic { font-family: Mona-Sans-Condensed-Light-Italic; font-weight: 300; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-SemiBold-Italic { font-family: Mona-Sans-Expanded-SemiBold-Italic; font-weight: 600; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Italic { font-family: Mona-Sans-Italic; font-weight: 400; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Light-Italic { font-family: Mona-Sans-Expanded-Light-Italic; font-weight: 300; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-SemiBold { font-family: Mona-Sans-Condensed-SemiBold; font-weight: 600; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Italic { font-family: Mona-Sans-Condensed-Italic; font-weight: 400; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Expanded-Bold-Italic { font-family: Mona-Sans-Expanded-Bold-Italic; font-weight: 700; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Medium-Italic { font-family: Mona-Sans-Medium-Italic; font-weight: 500; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Black { font-family: Mona-Sans-Black; font-weight: 900; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Black { font-family: Mona-Sans-Condensed-Black; font-weight: 900; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-Medium-Italic { font-family: Mona-Sans-Condensed-Medium-Italic; font-weight: 500; font-style: italic; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Bold { font-family: Mona-Sans-Bold; font-weight: 700; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-ExtraBold { font-family: Mona-Sans-ExtraBold; font-weight: 800; font-style: normal; font-stretch: 100%; }
+	  
+	    .Mona-Sans-Condensed-SemiBold-Italic { font-family: Mona-Sans-Condensed-SemiBold-Italic; font-weight: 600; font-style: italic; font-stretch: 100%; }
+	  
+	
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+	<h2>
+<b>Text</b>
+</h2>
+	
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-ExtraBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-ExtraBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Regular 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Regular" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Black 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Black" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Black-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Black-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-ExtraLight-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-ExtraLight-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-SemiBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-SemiBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-SemiBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-SemiBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Black-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Black-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-ExtraBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-ExtraBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Regular 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Regular" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Medium 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Medium" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-ExtraLight 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-ExtraLight" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-ExtraBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-ExtraBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Light 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Light" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Medium 14pt</div>
+      <div dir="auto" class="Mona-Sans-Medium" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Bold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Bold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Bold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Bold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Light 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Light" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-ExtraLight 14pt</div>
+      <div dir="auto" class="Mona-Sans-ExtraLight" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Medium 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Medium" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-ExtraLight-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-ExtraLight-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-SemiBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-SemiBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Light 14pt</div>
+      <div dir="auto" class="Mona-Sans-Light" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Regular 14pt</div>
+      <div dir="auto" class="Mona-Sans-Regular" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Light-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Light-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Bold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Bold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-ExtraLight-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-ExtraLight-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Medium-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Medium-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-ExtraBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-ExtraBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-ExtraLight 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-ExtraLight" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Black-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Black-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-ExtraBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-ExtraBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Bold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Bold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Light-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Light-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-SemiBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-SemiBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Light-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Light-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-SemiBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-SemiBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Expanded-Bold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Expanded-Bold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Medium-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Medium-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Black 14pt</div>
+      <div dir="auto" class="Mona-Sans-Black" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Black 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Black" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-Medium-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-Medium-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Bold 14pt</div>
+      <div dir="auto" class="Mona-Sans-Bold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-ExtraBold 14pt</div>
+      <div dir="auto" class="Mona-Sans-ExtraBold" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+    <div class="box">
+      <div class="box-title">Mona-Sans-Condensed-SemiBold-Italic 14pt</div>
+      <div dir="auto" class="Mona-Sans-Condensed-SemiBold-Italic" style="font-size: 14pt">Resolution 217 A (III) vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen daß Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit jeder Organe Unterricht begegnen.Jeder werden; Kulthandlungen Existenz que aylan&#39;ghanliqi, qedir-qimmiti ijtima’iy qilidu:hemme Yora ¿Un huatiromanmun?Ascantanrifin senenhas&#34;honra IQUl, col·lectivament, pu]ustinrin, Asambleyasının nintnam.Panru̸ji Xiskuamana, — sẽn ye.[Missing]Ned pœga, – E&#39;~mbi “raica qali.”Ni ai.3-&#39;E 360 ruku/supu tina¿;¡ju ADI‘Bakan &amp; vre°ymint secretario.general@interlingua.comUling nai&gt;&gt;ctaxa anetsoc̈hno d´fhiacha tjuta!Tjinguru KU`OTENESEKILONDEKESU và tháng bǎsí atâ þetta þær Þeim 5IGELE ese_ejja tia;\ui. le^ bekjentgjøre VERDENSERKLÆRING i%anique raryijnty£ryanityaniy rirva½arvurva « » = teirra.Øll ṅwet gban̄gba, enupa,…) pruckamakir+t |</span>
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "after"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	  items = document.getElementsByClassName("box")
+	  
+	  if (POSITION === "before") {
+	  POSITION = "after"
+	  for (item of items) {
+	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("before", "after")
+            item.lastElementChild.className = item.lastElementChild.className.replace("before", "after")
+	    fontToggle.textContent = "After"
+	  }
+	  } else {
+	  POSITION = "before"
+	  for (item of items) {
+	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("after", "before")
+            item.lastElementChild.className = item.lastElementChild.className.replace("after", "before")
+	    fontToggle.textContent = "Before"
+	  }
+	}
+	}
+	fontToggle.addEventListener("click", switchFonts);
+	</script>
+</html>
